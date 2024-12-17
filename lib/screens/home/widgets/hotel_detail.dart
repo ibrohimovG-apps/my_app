@@ -36,40 +36,49 @@ class _HotelDetailState extends State<HotelDetail> {
             expandedHeight: 300,
             floating: false,
             pinned: true,
-            /*leading: Padding(
+            leading: Padding(
               padding: const EdgeInsets.all(8.0),
-              child: GestureDetector(
-                onTap: () {
+              child: IconButton(
+                icon: const Icon(Icons.arrow_back_ios_new),
+                style: IconButton.styleFrom(
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(15),
+                  ),
+                  backgroundColor: Colors.white,
+                  fixedSize: const Size(100, 100),
+                ),
+                onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Container(
-                  decoration: BoxDecoration(
-                    shape: BoxShape.circle,
-                    color: AppStyles.primaryColor,
-                  ),
-                  child: const Icon(
-                    Icons.arrow_back,
-                    color: Colors.white,
-                  ),
-                ),
               ),
-            ),*/
+            ),
             flexibleSpace: FlexibleSpaceBar(
               title: Container(
                 padding: const EdgeInsets.symmetric(
                     // horizontal: 8,
                     // vertical: 4,
                     ),
-                child: Text(
-                  "${hotelList[index]["place"]}",
-                  style: const TextStyle(
-                    color: Colors.black,
-                    fontWeight: FontWeight.bold,
-                    fontSize: 26,
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  // color: Colors.black.withOpacity(0.5),
+                  child: Text(
+                    "${hotelList[index]["place"]}",
+                    style: const TextStyle(
+                      color: Colors.black,
+                      fontWeight: FontWeight.bold,
+                      fontSize: 26,
+                      shadows: [
+                        Shadow(
+                          blurRadius: 10,
+                          color: Colors.white,
+                          offset: Offset(2, 2),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
               ),
-              centerTitle: true,
+              centerTitle: false,
               background: Stack(
                 children: [
                   Positioned.fill(

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:my_app/base/bot_nav_bar.dart';
 import 'package:my_app/base/utils/all_json.dart';
+import 'package:my_app/screens/auth/screens/splash_screen.dart';
 import 'package:my_app/screens/home/widgets/all_hotels.dart';
 import 'package:my_app/screens/home/widgets/all_tickets.dart';
 import 'package:my_app/screens/home/widgets/hotel_detail.dart';
@@ -19,6 +20,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
+        AppRoutes.splashPage: (context) => const SplashPage(),
         AppRoutes.homePage: (context) => BottomNavBar(),
         AppRoutes.allTickets: (context) => const AllTickets(),
         AppRoutes.allHotels: (context) => const AllHotels(),
