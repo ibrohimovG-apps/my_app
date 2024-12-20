@@ -16,7 +16,7 @@ class _SplashPageState extends State<SplashPage> {
       (value) {
         Navigator.pushNamed(
           context,
-          AppRoutes.homePage,
+          AppRoutes.signInScreen,
         );
       },
     );
