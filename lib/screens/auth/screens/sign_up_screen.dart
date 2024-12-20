@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:my_app/base/res/styles/app_styles.dart';
 import 'package:my_app/base/utils/all_json.dart';
 
-class SignInScreen extends StatelessWidget {
-  const SignInScreen({super.key});
+class SignUpScreen extends StatelessWidget {
+  const SignUpScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,7 +32,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 80,
+                height: 40,
               ),
               TextField(
                 decoration: InputDecoration(
@@ -52,6 +52,21 @@ class SignInScreen extends StatelessWidget {
               TextField(
                 obscureText: true,
                 decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.email),
+                  hintText: 'Email',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 16.0,
+              ),
+              TextField(
+                decoration: InputDecoration(
                   prefixIcon: const Icon(Icons.lock),
                   hintText: 'Password',
                   filled: true,
@@ -62,7 +77,25 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              const SizedBox(height: 24.0),
+              const SizedBox(
+                height: 16.0,
+              ),
+              TextField(
+                obscureText: true,
+                decoration: InputDecoration(
+                  prefixIcon: const Icon(Icons.lock),
+                  hintText: 'Confirm Password',
+                  filled: true,
+                  fillColor: Colors.white,
+                  border: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    borderSide: BorderSide.none,
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 24.0,
+              ),
               ElevatedButton(
                 onPressed: () {},
                 style: ElevatedButton.styleFrom(
@@ -76,7 +109,7 @@ class SignInScreen extends StatelessWidget {
                   ),
                 ),
                 child: const Text(
-                  'Login',
+                  'Sign Up',
                   style: TextStyle(
                     fontSize: 16.0,
                     color: Colors.white,
@@ -84,20 +117,50 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
               const SizedBox(
-                height: 80,
+                height: 16,
               ),
               const Text(
-                "Forgot password?",
+                "Or",
                 style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+              const SizedBox(
+                height: 16,
+              ),
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  fixedSize: const Size.fromWidth(double.maxFinite),
+                  backgroundColor: AppStyles.bg_color,
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(30.0),
+                    side: const BorderSide(
+                      color: Color.fromARGB(255, 4, 63, 90), // Border color
+                      width: 2.0, // Border width
+                    ),
+                  ),
+                  padding: const EdgeInsets.symmetric(
+                    vertical: 15.0,
+                  ),
+                ),
+                child: const Text(
+                  'Sign In with Google',
+                  style: TextStyle(
+                    fontSize: 16.0,
                     color: Color.fromARGB(255, 4, 63, 90),
-                    fontWeight: FontWeight.bold),
+                  ),
+                ),
+              ),
+              const SizedBox(
+                height: 80,
               ),
               const Spacer(),
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   const Text(
-                    "Don't have an account?",
+                    "Already have an account?",
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),
                   const SizedBox(
@@ -105,10 +168,10 @@ class SignInScreen extends StatelessWidget {
                   ),
                   TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, AppRoutes.signUpScreen);
+                      Navigator.pushNamed(context, AppRoutes.signInScreen);
                     },
                     child: const Text(
-                      "Sign up",
+                      "Login",
                       style: TextStyle(
                           color: Color.fromARGB(255, 4, 63, 90),
                           fontWeight: FontWeight.bold),

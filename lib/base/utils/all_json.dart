@@ -74,6 +74,7 @@ List<Map<String, dynamic>> hotelList = [
 class AppRoutes {
   static const splashPage = "/";
   static const signInScreen = "/signInScreen";
+  static const signUpScreen = "/signUpScreen";
   static const homePage = "/homePage";
   static const allTickets = "/all_tickets";
   static const ticketScreen = "/ticket_screen";
