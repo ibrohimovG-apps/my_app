@@ -59,7 +59,7 @@ class _HotelDetailState extends State<HotelDetail> {
                     // vertical: 4,
                     ),
                 child: Container(
-                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  padding: const EdgeInsets.symmetric(horizontal: 5),
                   // color: Colors.black.withOpacity(0.5),
                   child: Text(
                     "${hotelList[index]["place"]}",

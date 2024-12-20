@@ -34,13 +34,11 @@ class _TicketScreenState extends State<TicketScreen> {
     return Scaffold(
       backgroundColor: AppStyles.bg_color,
       appBar: AppBar(
-        title: const Center(
-          child: Text(
-            "Tickets",
-            style: TextStyle(
-              fontSize: 30,
-              fontWeight: FontWeight.bold,
-            ),
+        title: const Text(
+          "Tickets",
+          style: TextStyle(
+            fontSize: 30,
+            fontWeight: FontWeight.bold,
           ),
         ),
         backgroundColor: AppStyles.bg_color,

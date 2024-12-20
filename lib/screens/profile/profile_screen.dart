@@ -11,12 +11,78 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppStyles.bg_color,
+      appBar: AppBar(
+        title: Text(
+          "Tickets App",
+          style: AppStyles.book_tickets,
+        ),
+        backgroundColor: AppStyles.bg_color,
+      ),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                color: AppStyles.primaryColor,
+              ),
+              child: const Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  CircleAvatar(
+                    radius: 30,
+                    backgroundImage: AssetImage(
+                        AppMedia.profile), // Replace with user profile image
+                  ),
+                  SizedBox(height: 10),
+                  Text(
+                    "G'ulomnazir Ibrohimov", // Replace with dynamic user name
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  Text(
+                    "gulomnaziribrohimov@gmail.com", // Replace with user email
+                    style: TextStyle(
+                      color: Colors.white70,
+                      fontSize: 14,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+            ListTile(
+              leading: const Icon(Icons.home, color: Colors.black),
+              title: const Text("Home"),
+              onTap: () {
+                Navigator.pop(context);
+                // Add your navigation logic here
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.settings, color: Colors.black),
+              title: const Text("Settings"),
+              onTap: () {
+                Navigator.pop(context);
+                // Add your navigation logic here
+              },
+            ),
+            ListTile(
+              leading: const Icon(Icons.help, color: Colors.black),
+              title: const Text("Help & Support"),
+              onTap: () {
+                Navigator.pop(context);
+                // Add your navigation logic here
+              },
+            ),
+          ],
+        ),
+      ),
       body: ListView(
         padding: const EdgeInsets.all(16),
         children: [
-          const SizedBox(
-            height: 50,
-          ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [

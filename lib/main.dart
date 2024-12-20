@@ -22,7 +22,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       routes: {
-        AppRoutes.splashPage: (context) => const SplashPage(),
+        AppRoutes.splashPage: (context) => const SplashScreen(),
         AppRoutes.signInScreen: (context) => const SignInScreen(),
         AppRoutes.signUpScreen: (context) => const SignUpScreen(),
         AppRoutes.homePage: (context) => BottomNavBar(),
